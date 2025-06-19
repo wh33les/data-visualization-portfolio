@@ -1,0 +1,10 @@
+data-visualization-portfolio.code-workspace
+.venv/
+__pycache__/
+tableau_cleanup.ps1
+media-bias-dashboard/DataCleanup.py
+media-bias-dashboard/RankingSearch.py
+2024-presidential-polling-dashboards/PresidentPollsCleanup.py
+2024-presidential-polling-dashboards/ideas.txt
+media-bias-dashboard/
+~rolling-polling-trends__22224.twbr
