@@ -11,7 +11,7 @@ Data was available at FiveThirtyEight during the election season.  A copy of it,
 - [2024 presidential race: multi-resolution polling analysis](https://public.tableau.com/app/profile/ashley.k.w.warren/viz/rolling-polling-trends/2024PresidentialRaceMulti-ResolutionPollingAnalysis?publish=yes)  Rolling averages for the candidates Trump, Biden, and Harris.  Key campaign events highlighted.  Toggle between populations sampled and geographic scopes.
 
 <p align="center">
-<img src="screenshots/rolling-polling-trends.png" alt="Polling Dashboard" width="800">
+<img src="screenshots/rolling-polling-trends.png" alt="Polling Dashboard" width="1000">
 </p>
 
 - Stay tuned for more!
