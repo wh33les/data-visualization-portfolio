@@ -152,7 +152,6 @@ def simple_cleaning_pipeline(
     logger.info("Simple cleaning complete:")
     logger.info(f"  Input: {initial_rows:,} rows")
     logger.info(f"  Output: {final_rows:,} rows")
-    logger.info(f"  Data quality: Clean and ready for analysis")
 
     return df
 

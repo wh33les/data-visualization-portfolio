@@ -72,37 +72,69 @@ def process_polling_data(
     if debug_mode:
         print("\nStep 3: Adding features...")
 
-    # Add all features (streamlined)
+    # Add all features
     df = features.add_geographic_features(df)
     df = features.add_temporal_features(df)
     df = features.add_methodology_features(df)
     df = features.add_quality_metrics(df)
 
+    # Create visualization-ready dataset
+    viz_columns = [
+        "candidate_name",
+        "pct",
+        "end_date",
+        "pollster",
+        "sample_size",
+        "geographic_scope",
+        "campaign_phase",
+        "population_clean",
+        "methodology_clean",
+        "margin_of_error",
+        "ci_lower",
+        "ci_upper",
+        "sample_size_category",
+        "pollster_grade_category",
+        "has_key_event",
+        "is_tracking_poll",
+        "polling_period_days",
+    ]
+
+    # Create streamlined version
+    df_viz = df[viz_columns]
+
+    # Calculate optimization metrics
+    original_memory_mb = df.memory_usage(deep=True).sum() / 1024**2
+    optimized_memory_mb = df_viz.memory_usage(deep=True).sum() / 1024**2
+    reduction_percent = (
+        (original_memory_mb - optimized_memory_mb) / original_memory_mb
+    ) * 100
+
+    # Log the optimization
+    logger.info("Creating visualization-ready dataset")
+    logger.info(f"Optimized from {len(df.columns)} to {len(df_viz.columns)} columns")
+    logger.info(
+        f"Memory reduced from {original_memory_mb:.1f}MB to {optimized_memory_mb:.1f}MB ({reduction_percent:.1f}% smaller)"
+    )
+
     if debug_mode:
-        print_data_summary(df, "Final Data")
+        print(f"\n{'='*20}")
+        print(f"DATASET OPTIMIZATION")
+        print(f"{'='*20}")
+        print(
+            f"Columns: {len(df.columns)} → {len(df_viz.columns)} ({len(df.columns) - len(df_viz.columns)} removed)"
+        )
+        print(f"Memory: {original_memory_mb:.1f}MB → {optimized_memory_mb:.1f}MB")
+        print(f"Reduction: {reduction_percent:.1f}% smaller")
 
-        # Show sample of final data in debug mode
-        key_cols = [
-            "candidate_name",
-            "pct",
-            "end_date",
-            "geographic_scope",
-            "campaign_phase",
-        ]
-        available_cols = [col for col in key_cols if col in df.columns]
-        print(f"\nSample of final data:")
-        print(df[available_cols].head().to_string(index=False))
-
-    # Step 4: Save results
-    df.to_csv(output_file, index=False)
-    logger.info(f"Pipeline complete. Data saved to {output_file}")
+    # Save the streamlined dataset
+    df_viz.to_csv(output_file, index=False)
+    logger.info(f"Tableau-ready dataset saved to {output_file}")
 
     if debug_mode:
-        print(f"\nPipeline completed successfully!")
-        print(f"Output saved to: {output_file}")
-        print(f"{len(df):,} rows of analysis-ready polling data")
+        print(f"\nTableau-ready dataset saved: {output_file}")
+        print(f"Ready for dashboard creation!")
 
-    return df
+    return df_viz
 
 
 def main():
@@ -135,7 +167,7 @@ def main():
         print("Usage: python main.py [input_file] [--debug]")
         sys.exit(1)
 
-    output_file = "../data/cleaned_polling_data.csv"
+    output_file = "../data/cleaned_polling_data.csv"  # Can change for different vizzes
 
     # Setup logging
     setup_logging(debug=debug_mode)
