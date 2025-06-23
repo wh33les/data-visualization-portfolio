@@ -10,7 +10,7 @@ Data was available at FiveThirtyEight during the election season.  A copy of it,
 
 - [2024 presidential race: multi-resolution polling analysis](https://public.tableau.com/app/profile/ashley.k.w.warren/viz/rolling-polling-trends/2024PresidentialRaceMulti-ResolutionPollingAnalysis?publish=yes)  Rolling averages for the candidates Trump, Biden, and Harris.  Key campaign events highlighted.  Toggle between populations sampled and geographic scopes.
 
-<img src="screenshots/polls.png" alt="Polling Dashboard" width="800">
+<img src="screenshots/rolling-polling-trends.png" alt="Polling Dashboard" width="800">
 
 - Stay tuned for more!
 
@@ -18,30 +18,30 @@ Data was available at FiveThirtyEight during the election season.  A copy of it,
 
 This data science portfolio project transforms raw polling data into interactive visualizations, featuring:
 
-- **Automated data cleaning pipeline** with Python
-- **Advanced feature engineering** for polling analysis
-- **Statistical calculations** including margin of error and confidence intervals
-- **Interactive Tableau dashboards** with filtering and time-series analysis
+- Automated data cleaning pipeline with Python
+- Advanced feature engineering for polling analysis
+- Statistical calculations including margin of error and confidence intervals
+- Interactive Tableau dashboards with filtering and time-series analysis
 
 ##  Technology Stack
 
 ### Data Processing & Analysis
 
-Python 3.8+ - Core data processing
-Pandas - Data manipulation and analysis
-NumPy - Numerical computations
-SciPy - Statistical calculations
+- Python 3.8+ - Core data processing
+- Pandas - Data manipulation and analysis
+- NumPy - Numerical computations
+- SciPy - Statistical calculations
 
 ### Data Visualization
 
-Tableau Desktop/Public - Interactive dashboards
-Matplotlib/Seaborn - Statistical plotting (optional)
+- Tableau Desktop/Public - Interactive dashboards
+- Matplotlib/Seaborn - Statistical plotting 
 
 ### Data Engineering
 
-Modular Python pipeline - Scalable processing architecture
-Logging & debugging - Professional error handling
-CSV data management - Structured data workflows
+- Modular Python pipeline - Scalable processing architecture
+- Logging & debugging - Professional error handling
+- CSV data management - Structured data workflows
 
 ## Usage Guide
 
@@ -72,25 +72,24 @@ The default file for input is `../data/president_polls.csv`.
 
 ### Advanced Dashboard Visualizations
 
- Momentum Indicator Heat Map - Monthly polling changes by candidate
- Pollster Quality Scatter Plot - Sample size vs polling spread correlation
- Methodology Impact Box Plots - Results distribution by polling method
- Geographic Heat Maps - State-by-state polling visualization
+- Momentum Indicator Heat Map - Monthly polling changes by candidate
+- Pollster Quality Scatter Plot - Sample size vs polling spread correlation
+- Methodology Impact Box Plots - Results distribution by polling method
+- Geographic Heat Maps - State-by-state polling visualization
 
 ### Statistical Analysis Improvements
 
- Sample-size weighted averages - Quality-adjusted polling trends
- Polling volatility indicators - Standard deviation tracking over time
- Confidence interval bands - Visual uncertainty representation
- Rolling average comparisons - 7-day vs 14-day trend analysis
- Key event impact analysis - Before/after polling shifts
+- Sample-size weighted averages - Quality-adjusted polling trends
+- Polling volatility indicators - Standard deviation tracking over time
+- Confidence interval bands - Visual uncertainty representation
+- Rolling average comparisons - 7-day vs 14-day trend analysis
+- Key event impact analysis - Before/after polling shifts
 
 ### Technical Infrastructure
 
- Automated data pipeline - Daily polling updates
- Database integration - PostgreSQL for larger datasets
- API development - Polling data endpoints
- Docker containerization - Reproducible deployment environment
+- Database integration - PostgreSQL for larger datasets
+- API development - Polling data endpoints
+- Docker containerization - Reproducible deployment environment
 
 ## Contact & Collaboration
 
@@ -98,10 +97,6 @@ The default file for input is `../data/president_polls.csv`.
 
 - **Email**: [ashleykwwarren@gmail.com]
 - **LinkedIn**: [Ashley K. W. Warren](https://www.linkedin.com/in/ashleykwwarren/)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
